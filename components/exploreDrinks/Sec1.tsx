@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import Image from "next/image";
 import { Header } from "../header";
 import { moodOptions } from "../Data";
@@ -91,17 +91,16 @@ export function Sec1() {
           </div>
         </div>
 
+        <style jsx>{`
+          . {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+          }
 
-         <style jsx>{`
-        .  {
-          -ms-overflow-style: none;
-          scrollbar-width: none;
-        }
-
-        .scrollbar-hide::-webkit-scrollbar {
-          display: none;
-        }
-      `}</style>
+          .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+          }
+        `}</style>
       </section>
     </>
   );

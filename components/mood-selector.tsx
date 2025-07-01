@@ -13,7 +13,7 @@ export function MoodSelector() {
     <Card className="w-full  xl:max-w-[1300px] overflow-hidden font-sans  relative  px-0 pt-[25px] pb-6  shadow-[0px_0px_0px_4px_rgba(233,234,235,0.3)] bg-white mx-auto rounded-3xl">
       <CardContent className="w-full">
         <div className="flex items-start gap-4 ">
-          <div className="flex items-center mb-14 lg:mb-7 max-w-[505px] w-full">
+          <div className="flex items-center mb-14 lg:mb-7 max-w-[630px] w-full">
             <div className="w-7 sm:w-10 h-7 sm:h-10 mr-3 flex-shrink-0">
               <Image src={graylogo} alt="" />
             </div>
