@@ -1,3 +1,4 @@
+"use client"
 import { MoodSelector } from "@/components/mood-selector";
 import Image from "next/image";
 import icon from "@/public/logo1.svg";
@@ -5,7 +6,12 @@ import thinkcircle from "@/public/thinkcircle.svg";
 import AnimatedTextSequence from "./AnimatedTextSequence";
 import { Header } from "./header";
 
-export function HeroSection() {
+interface HeroSectionProps {
+  overlay?: (value: boolean) => void; 
+}
+
+export function HeroSection({ overlay }: HeroSectionProps) {
+
   return (
     <>
       <section
@@ -14,10 +20,12 @@ export function HeroSection() {
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
-        className="font-sans  h-auto bg-gradient-to-br from-orange-50 via-pink-50 to-purple-100  w-full pt-4 sm:pt-7 px-4"
+        className="font-sans  h-auto bg-gradient-to-br from-orange-50 via-pink-50 to-purple-100  w-full pt-4 sm:pt-7 px-2"
       >
-        <Header />
-        <div className="container mx-auto px-2 sm:px-6 pb-14 pt-[41px]">
+        <Header overlay={overlay} />
+
+        
+        <div className="container mx-auto  pb-14 pt-[41px]">
           {/* Main Headline */}
           <div className="text-center -mb-1">
             <h1 className=" text-center font-sans  text-2xl sm:text-4xl lg:text-[56px]  max-w-[400px] sm:max-w-[580px] lg:max-w-[920px]  mx-auto leading-[105%] tracking-[-0.089em] font-medium text-black px-4 py-6 ">
@@ -48,6 +56,10 @@ export function HeroSection() {
           <MoodSelector />
         </div>
       </section>
+
+      
+
+
     </>
   );
 }

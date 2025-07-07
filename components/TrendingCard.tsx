@@ -34,7 +34,7 @@ export function ProductCard({
   return (
     <Card
       key={id}
-      className="w-[320px] overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-2xl"
+      className="min-w-[316px] h-[515px] overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-2xl"
     >
       <CardContent className="p-0">
         {/* Product Image Section */}

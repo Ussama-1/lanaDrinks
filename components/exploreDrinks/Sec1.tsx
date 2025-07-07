@@ -6,9 +6,9 @@ import { moodOptions } from "../Data";
 export function Sec1() {
   return (
     <>
-      <section className="font-sans  h-auto   w-full pt-4 sm:pt-7 px-4">
+      <section className="font-sans  h-auto   w-full pt-4 sm:pt-7 ">
         <Header />
-        <div className="container mx-auto px-2 sm:px-6 pb-14 pt-[38px]">
+        <div className=" pb-6 pt-[38px]">
           {/* Main Headline */}
           <div className="text-center ">
             <h1 className=" text-center font-[BrittiSans]   text-2xl sm:text-4xl lg:text-[56px]  max-w-[400px] sm:max-w-[580px] lg:max-w-[920px]  mx-auto leading-[105%] tracking-[-0.04em] font-medium text-black px-4 py-6 ">
@@ -22,7 +22,7 @@ export function Sec1() {
           </div>
 
           <div className=" overflow-auto scrollbar-none pt-3 sm:pt-5  scrollbar-hide">
-            <div className="grid grid-cols-6 gap-1.5 2xl:gap-5 w-[1312px] 2xl:w-[1312px] mx-auto  ">
+            <div className="grid grid-cols-6 gap-1.5 xl:gap-5 w-[1312px] mx-auto  ">
               {moodOptions.map((option) => (
                 <div
                   key={option.id}

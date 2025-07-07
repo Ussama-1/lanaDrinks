@@ -39,8 +39,8 @@ const LanaFooter = () => {
   ];
 
   return (
-    <footer className="bg-white border-t border-gray-200 font-sans">
-      <div className=" px-4 sm:px-6 xl:px-[4.4rem] pb-5 pt-7  lg:pt-11">
+    <footer className="bg-white border-t border-gray-200 font-sans container max-w-[1312px] px-1 mx-auto ">
+      <div className="  pb-5 pt-7  lg:pt-11">
         {/* Main Footer Content */}
         <div className="flex items-start w-full gap-2 lg:gap-12 xl:gap-20 flex-col lg:flex-row">
           <div className="lg:col-span-1  ">

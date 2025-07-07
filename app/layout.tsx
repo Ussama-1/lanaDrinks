@@ -28,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${inter.variable}  ${instrumentSerif.variable} antialiased max-w-[1440px] mx-auto  `}
+        className={`${inter.variable}  ${instrumentSerif.variable} antialiased max-w-[1440px] mx-auto  overflow-hidde `}
       >
         {children}
       </body>

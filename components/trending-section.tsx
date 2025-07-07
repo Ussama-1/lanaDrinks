@@ -89,7 +89,7 @@ const trendingProducts = [
 export function TrendingSection() {
   return (
     <section className="py-[84px] bg-white">
-      <div className="container mx-auto px-6">
+      <div className="container max-w-[1312px] px-1 mx-auto ">
         {/* Brand Showcase */}
         <div className="text-center mb-10 sm:mb-16 border-y border-[#E9EAEB] py-[51px] pl-4 max-w-[1312px] m-auto ">
           <h2 className=" text-2xl sm:text-5xl  ">
@@ -111,7 +111,7 @@ export function TrendingSection() {
         </div>
 
         {/* Trending Products */}
-        <div className="mb-8 sm:px-12 py-5">
+        <div className="mb-8  py-5">
           <div className="flex items-center justify-between mb-11  relative lg:static">
             <h3 className="text-2xl sm:text-5xl  ">
               <span className="font-serif italic tracking-[-0.0em]  ">
@@ -142,7 +142,7 @@ export function TrendingSection() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-4 gap-6 pt-4 lg:pt-0.5 items-center justify-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 pt-4 lg:pt-0.5 items-center justify-center">
             {trendingProducts.map((product) => (
               <ProductCard
                 key={product.id}

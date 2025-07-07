@@ -43,7 +43,7 @@ function Stories() {
 
   return (
     <>
-      <section className="container mx-auto px-6 sm:px-[4.5rem] pt-0.5 font-sans">
+      <section className="container max-w-[1312px] px-1 mx-auto pt-0.5 font-sans">
         <div className="flex items-center justify-between mb-16 lg:mb-10  relative lg:static">
           <div>
             <h3 className="text-2xl sm:text-5xl mb-1 sm:mb-4 ">
@@ -91,8 +91,8 @@ function Stories() {
               image={profile.image}
               name={profile.name}
               title={profile.title}
-              // isActive={activeCard === profile.id}
-              // onClick={() => setActiveCard(profile.id)}
+            // isActive={activeCard === profile.id}
+            // onClick={() => setActiveCard(profile.id)}
             />
           ))}
         </div>

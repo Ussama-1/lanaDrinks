@@ -10,7 +10,7 @@ export function MoodSelector() {
   const [isExperiences, setIsExperiences] = useState(false);
 
   return (
-    <Card className="w-full  xl:max-w-[1300px] overflow-hidden font-sans  relative  px-0 pt-[25px] pb-6  shadow-[0px_0px_0px_4px_rgba(233,234,235,0.3)] bg-white mx-auto rounded-3xl">
+    <Card className="w-full  xl:max-w-[1300px] overflow-hidden  font-sans  relative  px-0 pt-[25px] pb-6  shadow-[0px_0px_0px_4px_rgba(233,234,235,0.3)] bg-white mx-auto rounded-3xl">
       <CardContent className="w-full">
         <div className="flex items-start gap-4 ">
           <div className="flex items-center mb-14 lg:mb-7 max-w-[630px] w-full">
@@ -22,7 +22,7 @@ export function MoodSelector() {
             </h2>
           </div>
 
-          <div className=" top-16  absolute  left-1/2 transform -translate-x-1/2  lg:static  ">
+          <div className=" top-16  absolute  left-1/2 transform -translate-x-1/2  lg:top-6  ">
             <div className="w-[200px]  lg:w-[234px] h-[40px] lg:h-[44px] bg-[#FAFAFA] border border-[#E9EAEB] rounded-full p-1 flex gap-2">
               <button
                 type="button"
@@ -51,8 +51,8 @@ export function MoodSelector() {
           </div>
         </div>
 
-        <div className=" overflow-auto scrollbar-none pt-3 sm:pt-0 ">
-          <div className="grid grid-cols-6 gap-2 w-[1300px] 2xl:w-full ">
+        <div className=" overflow-auto scrollbar-none pt-3 sm:pt-0 scrollbar-hide ">
+          <div className="grid grid-cols-6 gap-2 w-[1300px] xl:w-full ">
             {!isExperiences
               ? moodOptions.map((option) => (
                   <div
@@ -153,6 +153,16 @@ export function MoodSelector() {
           </div>
         </div>
       </CardContent>
+       <style jsx>{`
+        .scrollbar-hide {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+
+        .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+        }
+      `}</style>
     </Card>
   );
 }

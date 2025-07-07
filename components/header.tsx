@@ -8,7 +8,11 @@ import Image from "next/image";
 import { Handshake, X } from "lucide-react";
 import Link from "next/link";
 
-export function Header() {
+type HeaderProps = {
+  overlay?: (value: boolean) => void;
+};
+
+export function Header({ overlay }: HeaderProps) {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const toggleMobileMenu = () => {
@@ -21,9 +25,9 @@ export function Header() {
         <div className="w-full mx-auto px-4 sm:px-7 py-2 sm:py-4">
           <div className="flex items-center justify-between">
             {/* Logo */}
-            <div className=" w-[62.24921417236328px] h-[58px] overflow-hidden">
+            <Link href={"/"} className=" w-[62.24921417236328px] h-[58px] overflow-hidden">
               <Image src={icon} className="object-cover" alt="" />
-            </div>
+            </Link>
 
             {/* Desktop Navigation - Hidden below lg */}
             <div className="hidden lg:flex items-center space-x-[31px]">
@@ -35,7 +39,7 @@ export function Header() {
                   Explore Drinks
                 </Link>
                 <Link
-                  href="#"
+                  href="experiences"
                   className="font-medium text-[20px] leading-[105%] hover:cursor-pointer capitalize text-[#181D27]"
                 >
                   Experiences
@@ -43,6 +47,7 @@ export function Header() {
                 <div className="flex items-center space-x-2">
                   <Link
                     href="#"
+                    onClick={() => overlay?.(true)}
                     className="font-medium text-[20px] leading-[105%] hover:cursor-pointer capitalize text-[#181D27]"
                   >
                     Bring a Friend
@@ -69,12 +74,12 @@ export function Header() {
                 MEET LANA
               </button>
 
-              <div className="flex items-center space-x-2.5 text-gray-700 hover:text-gray-900 cursor-pointer transition-colors">
+              <Link href={'/bag'} className="flex items-center space-x-2.5 text-gray-700 hover:text-gray-900 cursor-pointer transition-colors">
                 <Image src={bag} alt="" />
                 <span className="font-[600] tracking-[0.12em] text-[16px] leading-[105%] capitalize text-[#181D27]">
                   BAG (0)
                 </span>
-              </div>
+              </Link>
             </div>
 
             {/* Mobile Navigation - Visible below lg */}
@@ -128,30 +133,30 @@ export function Header() {
                     BAG (0)
                   </span>
                 </div>
-                <a
-                  href="#"
+                <Link
+                  href="/explore-drinks"
                   className="block font-medium text-[20px] leading-[105%] hover:cursor-pointer capitalize text-[#181D27] hover:text-[#F49062] transition-colors"
                   onClick={toggleMobileMenu}
                 >
-                  Trending Drinks
-                </a>
+                  Explore Drinks
+                </Link>
 
-                <a
-                  href="#"
+                <Link
+                  href="/experiences"
                   className="block font-medium text-[20px] leading-[105%] hover:cursor-pointer capitalize text-[#181D27] hover:text-[#F49062] transition-colors"
                   onClick={toggleMobileMenu}
                 >
-                  Lana Events
-                </a>
+                  Experiences
+                </Link>
 
                 <div className="flex items-center space-x-2">
-                  <a
+                  <Link
                     href="#"
                     className="font-medium text-[20px] leading-[105%] hover:cursor-pointer capitalize text-[#181D27] hover:text-[#F49062] transition-colors"
                     onClick={toggleMobileMenu}
                   >
-                    Refer & Earn
-                  </a>
+                    Bring a Friend
+                  </Link>
                   <Badge className="w-[48px] h-[28px] rounded-full border border-[#ABEFC6] px-[12px] py-[4px] bg-[#ECFDF3] text-sm text-[#067647]">
                     $10
                   </Badge>
@@ -180,6 +185,7 @@ export function Header() {
           </div>
         </>
       )}
+
     </>
   );
 }

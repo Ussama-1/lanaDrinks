@@ -64,7 +64,7 @@ const EventCardData = [
 
 function Upcoming() {
   return (
-    <section className="container mx-auto px-6 sm:px-[4.5rem] mb-28">
+    <section className="container max-w-[1312px] px-1 mx-auto mb-28">
       <div className="flex items-center justify-between mb-12  relative lg:static">
         <h3 className="text-2xl sm:text-5xl  ">
           <span className="font-medium font-sans tracking-[-0.04em]">
@@ -93,7 +93,7 @@ function Upcoming() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-4 gap-6 pt-4 lg:pt-0.5 items-center justify-center">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6 pt-4 lg:pt-0.5 items-center justify-center">
         {EventCardData.map((card) => (
           <EventCard
             key={card.id}

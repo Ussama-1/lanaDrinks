@@ -3,12 +3,15 @@ import trendingicon from "@/public/trendingicon.svg";
 import calendar from "@/public/Calendar.svg";
 import location from "@/public/location.svg";
 import Image, { StaticImageData } from "next/image";
+import Link from "next/link";
+
 type Friend = {
   name: string;
   avatar: string;
 };
 
 type EventCardProps = {
+  id?: number;
   heroImage?: StaticImageData;
   title?: string;
   date?: string;
@@ -20,9 +23,11 @@ type EventCardProps = {
   hasSalesEndingSoon?: boolean;
   className?: string;
   badge?: string;
+  experience?: boolean;
 };
 
 export const EventCard: React.FC<EventCardProps> = ({
+  id,
   heroImage,
   title,
   date,
@@ -32,12 +37,18 @@ export const EventCard: React.FC<EventCardProps> = ({
   additionalFriendsCount,
   isTrending,
   hasSalesEndingSoon,
+  experience,
 }) => {
   const displayFriends = friendsGoing?.slice(0, 4);
 
   return (
-    <div
-      className={`bg-white rounded-t-2xl overflow-hidden  w-full 2xl:w-[316px]  h-[358px] group font-sans `}
+    <Link
+      href={`/checkout/${id}`}
+      className={`${
+        experience
+          ? "bg-white rounded-t-2xl overflow-hidden  w-full flex-1 flex-wrap min-w-[316px]  h-[358px] group font-sans"
+          : "bg-white rounded-t-2xl overflow-hidden  w-full xl:w-[316px]  h-[358px] group font-sans"
+      } `}
     >
       {/* Hero Image Section */}
       <div className="relative h-[180px] overflow-hidden  ">
@@ -129,6 +140,6 @@ export const EventCard: React.FC<EventCardProps> = ({
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
