@@ -94,10 +94,13 @@ export default function HomePage() {
         {/* <Header /> */}
         <main>
           <HeroSection overlay={setpopup} />
+          <div className="px-2">
+
           <TrendingSection />
           <Upcoming />
           <Stories />
           <LanaFooter />
+          </div>
         </main>
       </div>
     </div>
